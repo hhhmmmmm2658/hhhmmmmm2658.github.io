@@ -1,0 +1,145 @@
+<style>
+body, h2, ul, li, a, form, input, button, div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+nav {
+  background-color: #4CAF50;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 5px 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #45a049;
+  border-radius: 4px;
+}
+
+#login {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#login h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #4CAF50;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-size: 1.1em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#login-message {
+  margin-top: 10px;
+  text-align: center;
+}
+</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Simpan Pinjam</title>
+  <link rel="stylesheet" href="nyoba.css">
+  <script defer src="nyoba.js"></script>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  
+  <div id="login">
+    <h2>Login</h2>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Masukkan username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Masukkan password" required>
+
+      <button type="submit">Masuk</button>
+    </form>
+    <div id="login-message"></div>
+  </div>
+
+  <script>
+    
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault(); 
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+     
+      if (username && password) {
+        window.location.href = 'beranda.html';
+      } else {
+      
+        document.getElementById('login-message').textContent = 'Username atau password tidak boleh kosong!';
+        document.getElementById('login-message').style.color = 'red';
+      }
+    });
+  </script>
+
+</body>
+</html>
